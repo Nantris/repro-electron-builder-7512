@@ -5,7 +5,7 @@
   "private": true,
   "main": "app/electron/main.js",
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "electron-builder install-app-deps && yarn dist-mac && open dist/mac-universal/secure-electron-template.app/Contents/Resources/app.asar.unpacked/node_modules/sharp/",
     "audit-app": "npx electronegativity -i ./ -x LimitNavigationGlobalCheck,PermissionRequestHandlerGlobalCheck",
     "translate": "node ./app/localization/translateMissing.js",
     "dev-server": "cross-env NODE_ENV=development webpack serve --config ./webpack.development.js > dev-scripts/webpack-dev-server.log 2> dev-scripts/webpack-dev-server-error.log",
@@ -99,7 +99,7 @@
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "electron": "^23.0.0",
-    "electron-builder": "~23.0.0",
+    "electron-builder": "^24.0.0",
     "electron-debug": "^3.2.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",

@@ -25,14 +25,7 @@ const isDev = process.env.NODE_ENV === "development";
 const port = 40992; // Hardcoded; needs to match webpack.development.js and package.json
 const selfHost = `http://localhost:${port}`;
 
-const argon2 = require('argon2');
 const sharp = require('sharp');
-
-try {
-  argon2.verify(); // Prevent any possible tree-shaking
-} catch (err) {
-  console.error(err);
-}
 
 try {
   sharp(); // Prevent any possible tree-shaking
